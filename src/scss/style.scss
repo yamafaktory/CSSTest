@@ -1,0 +1,67 @@
+/*
+ * CSSTest
+ * Stylesheet
+ *
+ * Parts of normalize.css v3.0.1 are included | MIT License | git.io/normalize
+ */
+
+@charset "UTF-8";
+
+/* Variables */
+
+$tabMargin: 1px;
+$contentMargin: 1em;
+
+/* Mixins */
+
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+@mixin text-size($size) {
+  -webkit-text-size-adjust: $size;
+      -ms-text-size-adjust: $size;
+          text-size-adjust: $size;
+}
+
+/* Imports */
+
+@import 'components/accordion';
+@import 'components/vertical-tab';
+
+/* Mobile first */
+
+*,
+*::after,
+*::before {
+  @include box-sizing(border-box);
+}
+
+html {
+  @include text-size(100%);
+}
+
+body {
+  margin: 0;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 14px;
+  }
+  line-height: 1.42857143;
+  color: rgba(0, 0, 0, .6);
+}
+
+main {
+  &,
+  section {
+    display: block;
+  }
+  margin: $contentMargin;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSSTest</title>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="css, test">
+    <meta name="description" content="A CSS test">
+    <meta name="author" content="Davy Duperron">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:700,500,400' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type='text/css'>
+  </head>
+  <body>
+    <main>
+
+      <h1 class="title">Vertical tab</h1>
+
+      <section class="vertical-tab">
+        <dl class="tabs">
+          <dd>
+            <a href="#option1" id="anchor1">Option 1</a>
+          </dd>
+          <dd>
+            <a href="#option2" id="anchor2">Option 2</a>
+          </dd>
+          <dd>
+            <a href="#option3" id="anchor3">Option 3</a>
+          </dd>
+        </dl>
+        <dl class="content">
+          <dd id="option1">
+            <article>
+              <h1>Heading 1</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.</p>
+            </article>
+          </dd>
+          <dd id="option2">
+            <article>
+              <h1>Heading 2</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.</p>
+              <p>Alia sint eius eos eu. Commune deterruisset ei quo. Fastidii tractatos no sit, nam sale delenit invidunt an. Ei eos soluta nostrud, qui vitae exerci indoctum ex, at vel nonumy facilis. Et nullam maluisset vulputate eum, in vis duis tritani mediocritatem, ei vim causae delicata. Mea dignissim constituam no, sit singulis molestiae honestatis et. Eu possit labitur delicatissimi has, cu tollit petentium pri.</p>
+            </article>
+          </dd>
+          <dd id="option3">
+            <article>
+              <h1>Heading 3</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.</p>
+            </article>
+          </dd>
+        </dl>
+      </section>
+      
+    </main>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+      
+        
+      $(document).ready(function () {
+
+        // Find href and hash
+        var href = $(location).attr('href');
+        var hash = $(location).attr('hash');
+        // Method to select option1 as default
+        var selectDefault = function (hashTab) {
+          hash = hashTab;
+          $(location).attr('hash', hash);
+        };
+        // Method to check the hash
+        // Case with empty hash or hash !== any tab present in the component
+        var hashCheck = function () {
+          if (hash === '' || $('.tabs a[href=' + hash + ']').length === 0) {
+            selectDefault('#option1');
+          }
+        };
+
+        // Check the hash when document is ready
+        hashCheck();
+
+        // Highlight the tab accordingly
+        $('.tabs a[href=' + hash + ']').addClass('selected');
+
+        // Set a listener for hashchange using hashCheck
+        $(window).on('hashchange', function() {
+          hashCheck();
+        });
+
+        // Event listener on tabs
+        $('.tabs a').on('click', function() {
+          $('.tabs a').removeClass('selected');
+          $(this).addClass('selected');
+        });
+
+      });
+    </script>
+  </body>
+</html>

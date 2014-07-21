@@ -1,0 +1,90 @@
+/* Vertical tab component */
+
+.vertical-tab {
+
+  /* Mobile first */
+
+  display: table;
+
+  a {
+    padding: $contentMargin;
+    text-decoration: none;
+    outline: 0;
+    background-color: transparent;
+    font-weight: 500;
+    display: block;
+    &,
+    &:active,
+    &:focus,
+    &:link,
+    &:visited {
+      color: rgba(0, 0, 0, .3);
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+      color: rgba(255, 255, 255, .9);
+    }
+  }
+
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  article {
+    display: block;
+    margin: $contentMargin;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    margin: $contentMargin 0 $contentMargin;
+    font-weight: 400;
+  }
+
+  .tabs,
+  .content {
+    vertical-align: top;
+    display: table-cell;
+  }
+
+  .tabs {
+    background-color: rgba(0, 0, 0, .1);
+    width: 30%;
+  }
+
+  .content :not(:target) {
+    article {
+      display: none;
+    }
+  }
+
+  .selected {
+    &,
+    &:hover {
+      color: rgba(0, 0, 0, .3);
+    }
+    & {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, .8);
+    }
+  }
+
+  /* Wide screens */
+
+  @media screen and (min-width: 768px) {
+
+    font-size: 1.25em;
+
+    .tabs {
+      width: 15%;
+    }
+
+  }
+
+}

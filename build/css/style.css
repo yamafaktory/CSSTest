@@ -1,0 +1,135 @@
+/*
+ * CSSTest
+ * Stylesheet
+ *
+ * Parts of normalize.css v3.0.1 are included | MIT License | git.io/normalize
+ */
+/* Variables */
+/* Mixins */
+/* Imports */
+/* Accordion component */
+.accordion {
+  /* Mobile first */
+  /* Wide screens */ }
+  .accordion a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 500; }
+    .accordion a, .accordion a:active, .accordion a:focus, .accordion a:link, .accordion a:visited {
+      color: rgba(0, 0, 0, 0.3); }
+    .accordion a:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: rgba(255, 255, 255, 0.9); }
+  .accordion dl, .accordion dd {
+    position: relative;
+    margin: 0; }
+  .accordion dd :not(:last-child) {
+    margin-bottom: 1px; }
+  .accordion article {
+    display: block;
+    margin: 1em; }
+  .accordion h1 {
+    font-weight: 700; }
+  .accordion p {
+    margin: 1em 0 1em;
+    font-weight: 400; }
+  .accordion :target a, .accordion :target a:active, .accordion :target a:focus, .accordion :target a:visited {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.3); }
+  .accordion :target a:hover {
+    background-color: rgba(0, 0, 0, 0.01);
+    color: rgba(0, 0, 0, 0.4); }
+  .accordion :not(:target) article {
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden; }
+  @media screen and (min-width: 768px) {
+    .accordion {
+      font-size: 1.25em; }
+      .accordion a {
+        float: left; }
+      .accordion article {
+        position: absolute;
+        top: 3.75rem;
+        line-height: 1.5; }
+      .accordion dd :not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 1px; } }
+
+/* Vertical tab component */
+.vertical-tab {
+  /* Mobile first */
+  display: table;
+  /* Wide screens */ }
+  .vertical-tab a {
+    padding: 1em;
+    text-decoration: none;
+    outline: 0;
+    background-color: transparent;
+    font-weight: 500;
+    display: block; }
+    .vertical-tab a, .vertical-tab a:active, .vertical-tab a:focus, .vertical-tab a:link, .vertical-tab a:visited {
+      color: rgba(0, 0, 0, 0.3); }
+    .vertical-tab a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: rgba(255, 255, 255, 0.9); }
+  .vertical-tab dl, .vertical-tab dd {
+    margin: 0; }
+  .vertical-tab article {
+    display: block;
+    margin: 1em; }
+  .vertical-tab h1 {
+    font-weight: 700; }
+  .vertical-tab p {
+    margin: 1em 0 1em;
+    font-weight: 400; }
+  .vertical-tab .tabs, .vertical-tab .content {
+    vertical-align: top;
+    display: table-cell; }
+  .vertical-tab .tabs {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 30%; }
+  .vertical-tab .content :not(:target) article {
+    display: none; }
+  .vertical-tab .selected, .vertical-tab .selected:hover {
+    color: rgba(0, 0, 0, 0.3); }
+  .vertical-tab .selected {
+    background-color: white; }
+  .vertical-tab .selected:hover {
+    background-color: rgba(255, 255, 255, 0.8); }
+  @media screen and (min-width: 768px) {
+    .vertical-tab {
+      font-size: 1.25em; }
+      .vertical-tab .tabs {
+        width: 15%; } }
+
+/* Mobile first */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: rgba(0, 0, 0, 0.6); }
+
+main {
+  margin: 1em; }
+  main, main section {
+    display: block; }
+
+.title {
+  text-align: center;
+  font-size: 2.5em; }

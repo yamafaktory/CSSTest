@@ -1,0 +1,103 @@
+/* Accordion component */
+
+.accordion {
+
+  /* Mobile first */
+
+  a {
+    display: block;
+    padding: $contentMargin;
+    text-decoration: none;
+    outline: 0;
+    background-color: rgba(0, 0, 0, .1);
+    font-weight: 500;
+    &,
+    &:active,
+    &:focus,
+    &:link,
+    &:visited {
+      color: rgba(0, 0, 0, .3);
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, .2);
+      color: rgba(255, 255, 255, .9);
+    }
+  }
+
+  dl,
+  dd {
+    position: relative;
+    margin: 0;
+  }
+
+  dd {
+    & :not(:last-child) {
+      margin-bottom: $tabMargin;
+    }
+  }
+
+  article {
+    display: block;
+    margin: $contentMargin;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    margin: $contentMargin 0 $contentMargin;
+    font-weight: 400;
+  }
+
+  & :target {
+    a {
+      &,
+      &:active,
+      &:focus,
+      &:visited {
+        background-color: transparent;
+        color: rgba(0, 0, 0, .3);
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, .01);
+        color: rgba(0, 0, 0, .4);
+      }
+    }
+  }
+
+  & :not(:target) {
+    article {
+      margin: 0;
+      padding: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  /* Wide screens */
+
+  @media screen and (min-width: 768px) {
+
+    font-size: 1.25em;
+
+    a {
+      float: left;
+    }
+
+    article {
+      position: absolute;
+      top: 3.75rem;
+      line-height: 1.5;
+    }
+
+    dd {
+      & :not(:last-child) {
+        margin-bottom: 0;
+        margin-right: $tabMargin;
+      }
+    }
+
+  }
+
+}
